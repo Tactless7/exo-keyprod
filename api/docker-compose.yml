@@ -1,0 +1,17 @@
+version: '3'
+services:
+  keyprod_database:
+    container_name: keyprod_database
+    image: postgres:14
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: keyprod
+      PG_DATA: /var/lib/postgresql/data
+    ports:
+      - 5432:5432
+    volumes:
+      - keyprod_database:/var/lib/postgresql/data
+volumes:
+  keyprod_database:
+    driver: local
