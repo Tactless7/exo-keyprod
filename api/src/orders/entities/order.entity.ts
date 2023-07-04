@@ -39,7 +39,7 @@ export class Order {
   status: OrderStatus;
 
   @JoinColumn({ name: 'product_ids' })
-  @OneToMany(() => Product, (product) => product.order)
+  @OneToMany(() => Product, (product) => product.order, { nullable: true })
   products: Product[];
   @RelationId((order: Order) => order.products)
   product_ids: number[];

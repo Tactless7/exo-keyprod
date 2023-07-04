@@ -8,4 +8,10 @@ export class OrdersService {
   constructor(
     @InjectRepository(Order) private ordersRepository: Repository<Order>,
   ) {}
+
+  async getAllOrders() {
+    const orders = await this.ordersRepository.find();
+
+    return orders;
+  }
 }
