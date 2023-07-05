@@ -26,9 +26,9 @@ export class Order {
   id: number;
 
   @JoinColumn({ name: 'client_id' })
-  @ManyToOne(() => Client, { onDelete: 'SET NULL' })
+  @ManyToOne(() => Client, (client) => client.orders, { onDelete: 'SET NULL' })
   client: Client;
-  @RelationId((order: Order) => order.client)
+  @Column()
   client_id: number;
 
   @Column({

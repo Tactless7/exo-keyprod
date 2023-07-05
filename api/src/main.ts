@@ -7,6 +7,8 @@ async function bootstrap() {
 
   app.use(RouteLoggerMiddleware);
 
+  app.enableCors();
+
   await app.listen(3000);
 }
 

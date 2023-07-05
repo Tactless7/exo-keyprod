@@ -5,6 +5,7 @@ import {createPinia} from 'pinia'
 
 import App from './App.vue'
 import router from './router'
+import {createNewInstance as createNewAxiosInstance} from "@/libs/axios";
 
 // Vuetify
 import 'vuetify/styles'
@@ -17,6 +18,8 @@ const vuetify = createVuetify({
   components,
   directives,
 })
+
+createNewAxiosInstance();
 
 const app = createApp(App)
 
